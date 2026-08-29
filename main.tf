@@ -15,3 +15,7 @@ provider "aws" {
 module "tcp_server" {
   source = "./EC2/tcp-server"
 }
+
+module "tcp_server_files" {
+  source = "./S3/tcp-server-files"
+}
