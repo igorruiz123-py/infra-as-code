@@ -3,7 +3,7 @@ resource "aws_eip" "tcp_server_eip" {
   tags = {
     Name = "tcp-server-eip",
     ApplicationId = "tcp-server",
-    EnvironmentId = "prod"
+    EnvironmentId = "test"
   }
 }
 

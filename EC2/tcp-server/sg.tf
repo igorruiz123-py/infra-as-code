@@ -5,8 +5,8 @@ resource "aws_security_group" "tcp_server_sg" {
     vpc_id = data.aws_vpc.main_vpc.id
 
     tags = {
-        ServerId = "tcp-server",
-        EnvironmentId = "prod"
+        ApplicationId = "tcp-server",
+        EnvironmentId = "test"
     }
 }
 

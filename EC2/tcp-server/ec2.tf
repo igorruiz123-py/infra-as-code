@@ -23,6 +23,6 @@ resource "aws_instance" "tcp_server" {
     tags = {
         Name = "tcp-server",
         ApplicationId = "tcp-server",
-        EnvironmentId = "prod"
+        EnvironmentId = "test"
     }
 }
