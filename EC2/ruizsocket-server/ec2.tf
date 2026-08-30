@@ -10,6 +10,8 @@ resource "aws_instance" "tcp_server" {
 
     associate_public_ip_address = true
 
+    iam_instance_profile = aws_iam_instance_profile.tcp_server_s3_cloudwatch_profile.name
+
     vpc_security_group_ids = [
         aws_security_group.tcp_server_sg.id
     ]
@@ -21,8 +23,8 @@ resource "aws_instance" "tcp_server" {
     }
 
     tags = {
-        Name = "tcp-server",
-        ApplicationId = "tcp-server",
+        Name = "ruizsocket-server",
+        ApplicationId = "ruizsocket.dev",
         EnvironmentId = "test"
     }
 }

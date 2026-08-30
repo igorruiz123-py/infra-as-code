@@ -1,8 +1,8 @@
 resource "aws_eip" "tcp_server_eip" {
   domain   = "vpc"
   tags = {
-    Name = "tcp-server-eip",
-    ApplicationId = "tcp-server",
+    Name = "ruizsocket-server-eip",
+    ApplicationId = "ruizsocket.dev",
     EnvironmentId = "test"
   }
 }

@@ -1,11 +1,11 @@
 resource "aws_security_group" "tcp_server_sg" {
 
-    name = "tcp-server-sg"
+    name = "ruizsocket-server-sg"
     description = "Security Group for the EC2 tcp-server instance"
     vpc_id = data.aws_vpc.main_vpc.id
 
     tags = {
-        ApplicationId = "tcp-server",
+        ApplicationId = "ruizsocket.dev",
         EnvironmentId = "test"
     }
 }
