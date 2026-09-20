@@ -1,9 +1,9 @@
 resource "aws_s3_bucket" "tcp_server_files" {
 
-    bucket = "ruizsocket-server-files"
+    bucket = "cloudsocket-server-bucket"
 
     tags = {
-        ApplicationId = "ruizsocket.dev"
+        ApplicationId = "cloudsocket.com.br"
         EnvironmentId = "test"
     }
 }

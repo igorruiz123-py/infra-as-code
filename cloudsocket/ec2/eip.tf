@@ -1,8 +1,8 @@
 resource "aws_eip" "tcp_server_eip" {
   domain   = "vpc"
   tags = {
-    Name = "ruizsocket-server-eip",
-    ApplicationId = "ruizsocket.dev",
+    Name = "cloudsocket-server-eip",
+    ApplicationId = "cloudsocket.com.br",
     EnvironmentId = "test"
   }
 }

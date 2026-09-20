@@ -23,8 +23,8 @@ resource "aws_instance" "tcp_server" {
     }
 
     tags = {
-        Name = "ruizsocket-server",
-        ApplicationId = "ruizsocket.dev",
+        Name = "cloudsocket-server",
+        ApplicationId = "cloudsocket.com.br",
         EnvironmentId = "test"
     }
 }

@@ -1,11 +1,11 @@
 resource "aws_security_group" "tcp_server_sg" {
 
-    name = "ruizsocket-server-sg"
-    description = "Security Group for the EC2 tcp-server instance"
+    name = "cloudsocket-server-sg"
+    description = "Security Group for the EC2 cloudsocket-server instance"
     vpc_id = data.aws_vpc.main_vpc.id
 
     tags = {
-        ApplicationId = "ruizsocket.dev",
+        ApplicationId = "cloudsocket.com.br",
         EnvironmentId = "test"
     }
 }
@@ -51,3 +51,13 @@ resource "aws_vpc_security_group_ingress_rule" "allow_asciisocket" {
 
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_s3bridge" {
+
+    security_group_id = aws_security_group.tcp_server_sg.id
+
+    cidr_ipv4 = "0.0.0.0/0"
+    from_port = 8080
+    to_port = 8080
+    ip_protocol = "tcp"
+
+}

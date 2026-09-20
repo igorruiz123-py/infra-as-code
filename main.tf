@@ -12,14 +12,14 @@ provider "aws" {
   profile = "igor"
 }
 
-module "ruizsocket_server" {
-  source = "./EC2/ruizsocket-server"
+module "cloudsocket_ec2" {
+  source = "./cloudsocket/ec2"
 }
 
-module "ruizsocket_server_files" {
-  source = "./S3/ruizsocket-server-bucket"
+module "cloudsocket_s3_bucket" {
+  source = "./cloudsocket/s3_bucket"
 }
 
-module "ruizsocket_server_logs_group" {
-  source = "./cloudwatch/ruizsocket-server-log-group"
+module "cloudsocket_cloudwatch" {
+  source = "./cloudsocket/cloudwatch"
 }
