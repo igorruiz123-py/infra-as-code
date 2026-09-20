@@ -68,7 +68,8 @@ resource "aws_iam_role_policy" "tcp_server_cloudwatch_role_policy" {
 
                 Resource = [
                     "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/asciisocket/logs:*",
-                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/tinyshell/logs:*"
+                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/tinyshell/logs:*",
+                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/s3bridge/logs:*"
                 ]
             }
         ]
