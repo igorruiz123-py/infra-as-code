@@ -5,3 +5,7 @@
 terraform.tfstate
 
 terraform.tfstate.backup
+
+lambdas/ec2-cpu-usage-alarms/index.py
+
+lambdas/ec2-cpu-usage-alarms/lambda.zip
