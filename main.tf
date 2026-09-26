@@ -23,3 +23,7 @@ module "cloudsocket_s3_bucket" {
 module "cloudsocket_cloudwatch" {
   source = "./cloudsocket/cloudwatch"
 }
+
+module "ec2-cpu-usage-alarms" {
+  source = "./lambdas/ec2-cpu-usage-alarms"
+}
