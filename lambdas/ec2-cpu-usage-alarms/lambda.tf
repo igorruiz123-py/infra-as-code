@@ -4,6 +4,7 @@ resource "aws_lambda_function" "ec2_cpu_lambda" {
     handler = "index.lambda_handler"
     runtime = "python3.8"
     description = "Lambda function responsible for sending notifications to Telegram bot regarding high EC2 CPU usage metrics"
+    filename = "${path.module}/lambda.zip"
 
     tags = {
         EnvironmentId = "test"

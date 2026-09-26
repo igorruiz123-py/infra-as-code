@@ -27,7 +27,7 @@ resource "aws_iam_role" "ec2_cpu_usage_lambda_iam_role" {
 
 resource "aws_iam_role_policy" "ec2_cpu_usage_lambda_cloudwatch_iam_role_policy" {
     name = "ec2-cpu-usage-lambda-cloudwatch-iam-role-policy"
-    role = aws_iam_role.ec2_cpu_usage_lambda_iam_role.arn
+    role = aws_iam_role.ec2_cpu_usage_lambda_iam_role.name
 
     policy = jsonencode({
         Version = "2012-10-17"

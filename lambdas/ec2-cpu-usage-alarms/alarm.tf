@@ -11,13 +11,9 @@ resource "aws_cloudwatch_metric_alarm" "cpu_usage_metric" {
 
   treat_missing_data = "notBreaching"
 
-  alarm_actions = [
-    module.alarms-sns-topic.topic_arn
-  ]
+  alarm_actions = [aws_sns_topic.ec2_cpu_usage_topic.arn]
 
-  ok_actions = [
-    module.alarms-sns-topic.topic_arn
-  ]
+  ok_actions = [aws_sns_topic.ec2_cpu_usage_topic.arn]
 
   metric_query {
     id = "q1"
