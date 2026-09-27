@@ -63,14 +63,37 @@ resource "aws_iam_role_policy" "tcp_server_cloudwatch_role_policy" {
                 Action = [
                     "logs:CreateLogStream",
                     "logs:DescribeLogStreams",
-                    "logs:PutLogEvents"
+                    "logs:PutLogEvents",
                 ]
 
                 Resource = [
                     "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/asciisocket/logs:*",
                     "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/tinyshell/logs:*",
-                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/s3bridge/logs:*"
+                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/s3bridge/logs:*",
+                    "arn:aws:logs:us-east-1:692539598859:log-group:/cloudsocket/Ec2StorageMonitoring/logs:*"
                 ]
+            }
+        ]
+    })
+}
+
+resource "aws_iam_role_policy" "tcp_server_sns_iam_role_policy" {
+    
+    name = "cloudsocket-server-sns-iam-role-policy"
+    role = aws_iam_role.tcp_server_s3_cloudwatch_iam_role.id
+
+    policy = jsonencode({
+        Version = "2012-10-17"
+
+        Statement = [
+            {
+                Effect = "Allow"
+
+                Action = [
+                    "Sns:Publish"
+                ]
+
+                Resource = "*"
             }
         ]
     })
