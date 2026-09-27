@@ -38,10 +38,14 @@ resource "aws_iam_role_policy" "ec2_cpu_usage_lambda_cloudwatch_iam_role_policy"
 
                 Action = [
                     "logs:CreateLogStream",
-                    "logs:PutLogEvents"
+                    "logs:PutLogEvents",
+                    "logs:CreateLogStream",
+                    "logs:DescribeLogStreams",
+                    "logs:PutLogEvents",
+                    "logs:CreateLogGroup"
                 ]
 
-                Resource = "${aws_cloudwatch_log_group.ec2_cpu_usage_lambda_log_group.arn}:*"
+                Resource = "*"
             }
         ]
     })
