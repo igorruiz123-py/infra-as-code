@@ -27,3 +27,7 @@ module "cloudsocket_cloudwatch" {
 module "ec2-cpu-usage-alarms" {
   source = "./lambdas/ec2-cpu-usage-alarms"
 }
+
+module "ec2-storage-usage-alarm" {
+  source = "./lambdas/ec2-storage-usage-alarm"
+}
