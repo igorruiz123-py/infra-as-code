@@ -31,3 +31,7 @@ module "ec2-cpu-usage-alarms" {
 module "ec2-storage-usage-alarm" {
   source = "./lambdas/ec2-storage-usage-alarm"
 }
+
+module "ec2-system-update-alarm" {
+  source = "./lambdas/ec2-system-update-alarm"
+}
