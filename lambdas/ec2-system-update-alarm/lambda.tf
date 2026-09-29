@@ -14,6 +14,6 @@ resource "aws_lambda_function" "ec2_system_updates_lambda" {
 
     tags = {
         EnvironmentId = "test"
-        ApplicationId = "Ec2StorageMonitoring"
+        ApplicationId = "Ec2SystemUpdatesMonitoring"
     }
 }
